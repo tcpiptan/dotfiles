@@ -1,6 +1,6 @@
 cd ~
 rm -f .bashrc .dir_colors .git-completion .git-prompt .gitconfig .tmux.conf .vimrc
-rm -rf .vim
+rm -rf .vim/
 ln -s git/dotfiles/.bashrc ~/.bashrc
 ln -s git/dotfiles/.dir_colors ~/.dir_colors
 ln -s git/dotfiles/.git-completion ~/.git-completion
