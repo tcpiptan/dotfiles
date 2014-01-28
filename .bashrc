@@ -13,4 +13,8 @@ export LANG=ja_JP.UTF-8
 
 source ~/.git-prompt
 source ~/.git-completion
-PS1="[\u@\h \W\$(__git_ps1)]\$ "
+if [ `id -u` == 0 ]; then
+    PS1="[\u@\h \W\$(__git_ps1)]# "
+else
+    PS1="[\u@\h \W\$(__git_ps1)]\$ "
+fi
