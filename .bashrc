@@ -7,6 +7,9 @@ fi
 
 # User specific aliases and functions
 
+# disable stty stop for i-search
+stty stop undef
+
 alias ll='ls -laF --color'
 
 export LANG=ja_JP.UTF-8
