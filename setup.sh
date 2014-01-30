@@ -1,15 +1,28 @@
-cd ~
-rm -f .bashrc .dir_colors .git-completion .git-prompt .gitconfig .tmux.conf .vimrc
-rm -rf .vim/
-ln -s git/dotfiles/.bashrc ~/.bashrc
-ln -s git/dotfiles/.dir_colors ~/.dir_colors
-ln -s git/dotfiles/.git-completion ~/.git-completion
-ln -s git/dotfiles/.git-prompt ~/.git-prompt
-ln -s git/dotfiles/.gitconfig ~/.gitconfig
-ln -s git/dotfiles/.tmux.conf ~/.tmux.conf
-ln -s git/dotfiles/.vimrc ~/.vimrc
-ln -s git/dotfiles/.vim ~/.vim
-mkdir -p ~/.vim/bundle
-cd ~/.vim/bundle
-git clone https://github.com/Shougo/neobundle.vim neobundle
-git clone https://github.com/Shougo/unite.vim unite
+FILES=(.bashrc .dir_colors .git-completion .git-prompt .gitconfig .rpmmacros .tmux.conf .vimrc .vim)
+
+for i in "${FILES[@]}"
+do
+    src=$HOME/git/dotfiles/$i
+    dst=$HOME/$i
+
+    if [ -e $dst ]; then
+        rm -rf $dst
+    fi
+
+    echo "----"
+    echo $src
+    echo $dst
+    ln -s $src $dst
+done
+
+mkdir -p $HOME/.vim/bundle
+
+wget -O $HOME/.vim/bundle/neobundle.zip https://github.com/Shougo/neobundle.vim/archive/master.zip
+unzip $HOME/.vim/bundle/neobundle.zip -d $HOME/.vim/bundle/
+mv $HOME/.vim/bundle/neobundle{.vim-master,}
+rm $HOME/.vim/bundle/neobundle.zip
+
+wget -O $HOME/.vim/bundle/unite.zip https://github.com/Shougo/unite.vim/archive/master.zip
+unzip $HOME/.vim/bundle/unite.zip -d $HOME/.vim/bundle/
+mv $HOME/.vim/bundle/unite{.vim-master,}
+rm $HOME/.vim/bundle/unite.zip

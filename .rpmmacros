@@ -1,0 +1,3 @@
+%_topdir    %(echo $HOME)/rpmbuild
+%__arch_install_post    /usr/lib/rpm/check-buildroot
+%debug_package  %{nil}

@@ -12,41 +12,27 @@
 :set laststatus=2
 :set showcmd
 :set number
-":set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 :set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%y%=[ASCII=\%03.3b][HEX=\%02.2B][%04l,%04v]%8P
 :set ambiwidth=double
 :let mapleader="\\"
+
+if filereadable(expand('~/.vimrc.neobundle'))
+    source ~/.vimrc.neobundle
+endif
 
 " md as markdown, instead of modula2
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 
 " NeoBundle
 if has('vim_starting')
-    :set nocompatible               " Be iMproved
+    :set nocompatible
     :set runtimepath+=~/.vim/bundle/neobundle/
 endif
 
 :call neobundle#rc(expand('~/.vim/bundle/'))
 
-:NeoBundle 'Shougo/vimproc', {
-  \ 'build' : {
-    \ 'windows' : 'make -f make_mingw32.mak',
-    \ 'cygwin' : 'make -f make_cygwin.mak',
-    \ 'mac' : 'make -f make_mac.mak',
-    \ 'unix' : 'make -f make_unix.mak'
-  \ }
-\ }
-
 :NeoBundle "Shougo/neocomplete"
-:NeoBundle "Shougo/unite"
-:NeoBundle "Shougo/vimfiler"
-:NeoBundle "Shougo/vimshell"
-:NeoBundle "thinca/vim-quickrun"
 :NeoBundle "Markdown"
-":NeoBundle 'nishigori/vim-php-dictionary'
-":NeoBundle 'nishigori/vim-php-dictionary', 'php5.4'
-":NeoBundle 'nanotech/jellybeans.vim'
-":NeoBundle 'djjcast/mirodark'
 
 highlight Comment ctermfg=4
 highlight Pmenu ctermbg=blue ctermfg=white
