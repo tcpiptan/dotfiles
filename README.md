@@ -1,8 +1,11 @@
 dotfiles
 ========
 
-usage
+setup
 -----
 
+    mkdir ~/git
+    cd ~/git
     git clone https://github.com/tcpiptan/dotfiles.git
-    ln -s dotfiles/.bashrc ~/.bashrc
+    cd dotfiles
+    sh setup.sh
