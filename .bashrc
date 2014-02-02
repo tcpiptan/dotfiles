@@ -7,10 +7,23 @@ fi
 
 # User specific aliases and functions
 
+if [ -f ~/.bashrc.local ]; then
+	. ~/.bashrc.local
+fi
+
 # disable stty stop for i-search
 stty stop undef
 
-alias ll='ls -laF --color'
+case "${OSTYPE}" in
+darwin*)
+    alias ls="gls --color"
+    alias ll="gls -laF --color"
+    ;;
+linux*)
+    alias ls='ls --color'
+    alias ll='ls -laF --color'
+    ;;
+esac
 
 export LANG=ja_JP.UTF-8
 

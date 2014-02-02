@@ -1,5 +1,6 @@
 [color]
 	ui = auto
+    diff = auto
 [http]
 	postBuffer = 524288000
 [pack]
@@ -7,3 +8,6 @@
 	SizeLimit = 100m
 [core]
 	editor = vim -c \"set fenc=utf-8\"
+    excludesfile = ~/.gitignore
+[include]
+    path = ~/.gitconfig.local

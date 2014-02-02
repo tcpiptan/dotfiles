@@ -34,8 +34,11 @@ endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
 
-NeoBundle "Shougo/neocomplete"
-NeoBundle "Markdown"
+NeoBundleFetch 'Shougo/neobundle'
+
+"let g:neobundle#types#git#default_protocol = 'https'
+NeoBundle 'Shougo/neocomplete'
+NeoBundle 'Markdown'
 
 syntax on
 filetype on
@@ -66,9 +69,9 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions',
-    \ 'php' : $HOME.'/.vim/dict/php.dict'
+    \ 'vimshell' : '~/.vimshell_hist',
+    \ 'scheme' : '~/.gosh_completions',
+    \ 'php' : '~/.vim/dict/php.dict'
 \ }
 
 " Define keyword.
