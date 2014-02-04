@@ -19,6 +19,10 @@ darwin*)
     alias ls="gls --color"
     alias ll="gls -laF --color"
     ;;
+freebsd*)
+    alias ls="gnuls --color"
+    alias ll="gnuls -laF --color"
+    ;;
 linux*)
     alias ls='ls --color'
     alias ll='ls -laF --color'
