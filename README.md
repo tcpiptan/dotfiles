@@ -8,4 +8,4 @@ setup
     cd ~/git
     git clone https://github.com/tcpiptan/dotfiles.git
     cd dotfiles
-    sh setup.sh
+    bash setup.sh
