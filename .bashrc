@@ -16,12 +16,22 @@ stty stop undef
 
 case "${OSTYPE}" in
 darwin*)
-    alias ls="gls --color"
-    alias ll="gls -laF --color"
+    if which gls > /dev/null; then
+        alias ls="gls --color"
+        alias ll="gls -laF --color"
+    else
+        alias ls="ls -G"
+        alias ll="ls -laFG"
+    fi
     ;;
 freebsd*)
-    alias ls="gnuls --color"
-    alias ll="gnuls -laF --color"
+    if which gnuls > /dev/null; then
+        alias ls="gnuls --color"
+        alias ll="gnuls -laF --color"
+    else
+        alias ls="ls -G"
+        alias ll="ls -laFG"
+    fi
     ;;
 linux*)
     alias ls='ls --color'
