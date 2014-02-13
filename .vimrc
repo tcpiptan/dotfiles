@@ -74,7 +74,8 @@ let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'vimshell' : '~/.vimshell_hist',
     \ 'scheme' : '~/.gosh_completions',
-    \ 'php' : '~/.vim/dict/php.dict'
+    \ 'php' : '~/.vim/dict/php.dict',
+    \ 'perl' : '~/.vim/dict/perl.dict'
 \ }
 
 " Define keyword.

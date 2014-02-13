@@ -1,6 +1,6 @@
 BACKUPDIR=~/.dotfiles.old/
 DIRS=(.vim .vim/bundle .vim/dict)
-FILES=(.bashrc .dir_colors .git-completion .git-prompt .gitconfig .rpmmacros .tmux.conf .vim/dict/php.dict .vimrc)
+FILES=(.bashrc .dir_colors .git-completion .git-prompt .gitconfig .rpmmacros .tmux.conf .vim/dict/perl.dict .vim/dict/php.dict .vimrc)
 
 if [ -e $BACKUPDIR ]; then
     echo "backup still existing. exit.";
