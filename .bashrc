@@ -12,7 +12,7 @@ if [ -f ~/.bashrc.local ]; then
 fi
 
 # disable stty stop for i-search
-stty stop undef
+[ -t 0 ] && stty stop undef
 
 case "${OSTYPE}" in
 darwin*)
