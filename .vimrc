@@ -42,6 +42,9 @@ NeoBundleFetch 'Shougo/neobundle'
 
 "let g:neobundle#types#git#default_protocol = 'https'
 NeoBundle 'Shougo/neocomplete'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite-outline'
+NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Markdown'
 
 syntax on
