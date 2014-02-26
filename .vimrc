@@ -14,6 +14,7 @@ set showcmd
 set number
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%y%=[ASCII=\%05b][HEX=\%04B][%04l,%04v]%8P
 set ambiwidth=double
+set scrolloff=999
 
 " Esc連打で検索ハイライトを消す
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
