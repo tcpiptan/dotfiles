@@ -70,7 +70,7 @@ NeoBundleCheck
 "--------------------------------------
 " lightline.vim
 let g:lightline = {
-    \ 'colorscheme': 'wombat',
+    \ 'colorscheme': 'solarized_dark',
     \ 'mode_map': { 'c': 'NORMAL' },
     \ 'active': {
         \ 'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
