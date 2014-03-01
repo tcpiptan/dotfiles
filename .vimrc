@@ -190,19 +190,24 @@ let g:gitgutter_sign_added = '✚'
 let g:gitgutter_sign_modified = '➜'
 let g:gitgutter_sign_removed = '✘'
 let g:gitgutter_sign_modified_removed = '➜✘'
+
 let g:lightline = {
         \ 'colorscheme': 'solarized_dark',
         \ 'mode_map': {'c': 'NORMAL'},
         \ 'active': {
         \   'left': [
         \     ['mode', 'paste'],
-        \     ['fugitive', 'gitgutter', 'filename'],
+        \     ['cwd', 'fugitive', 'gitgutter'],
+        \     ['filename'],
         \   ],
         \   'right': [
         \     ['lineinfo', 'syntastic'],
         \     ['percent'],
         \     ['charcode', 'fileformat', 'fileencoding', 'filetype'],
         \   ]
+        \ },
+        \ 'component': {
+        \   'cwd': '%{fnamemodify(getcwd(), ":~")}'
         \ },
         \ 'component_expand': {
         \   'syntastic': 'SyntasticStatuslineFlag'
@@ -258,7 +263,7 @@ function! MyFilename()
         \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
         \  &ft == 'unite' ? unite#get_status_string() :
         \  &ft == 'vimshell' ? substitute(b:vimshell.current_dir,expand('~'),'~','') :
-        \ '' != expand('%') ? expand('%') : '[No Name]') .
+        \ '' != expand('%:f') ? expand('%:f') : '[No Name]') .
         \ ('' != MyModified() ? ' ' . MyModified() : '')
 endfunction
 
@@ -266,7 +271,7 @@ function! MyFugitive()
   try
     if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
       let _ = fugitive#head()
-      return strlen(_) ? _ : ''
+      return strlen(_) ? '['._.']' : ''
     endif
   catch
   endtry
@@ -274,15 +279,15 @@ function! MyFugitive()
 endfunction
 
 function! MyFileformat()
-  return winwidth('.') > 70 ? &fileformat : ''
+  return winwidth('.') > 70 ? 'ff:'.&fileformat : ''
 endfunction
 
 function! MyFiletype()
-  return winwidth('.') > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+  return winwidth('.') > 70 ? 'ft:'.(strlen(&filetype) ? &filetype : 'no ft') : ''
 endfunction
 
 function! MyFileencoding()
-  return winwidth('.') > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+  return winwidth('.') > 70 ? 'fenc:'.(strlen(&fenc) ? &fenc : &enc) : ''
 endfunction
 
 function! MyMode()
