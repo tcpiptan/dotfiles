@@ -31,7 +31,8 @@ if exists('&ambiwidth')
 endif
 
 " 保存時に行末の空白を除去する
-autocmd BufWritePre * :%s/\s\+$//ge
+" 有効にするとMarkdownの改行が除去されてしまう
+"autocmd BufWritePre * :%s/\s\+$//ge
 
 " Esc連打で検索ハイライトを消す
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
