@@ -433,3 +433,10 @@ let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+"--------------------------------------
+" Source local settings
+
+if filereadable(expand('~/.vimrc.local'))
+  source ~/.vimrc.local
+endif
