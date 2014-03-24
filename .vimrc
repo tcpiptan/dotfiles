@@ -125,6 +125,9 @@ let g:molokai_original = 1
 let g:rehash256 = 1
 "let loaded_matchparen = 1
 
+" vim-localvimrc 設定を確認なしで読み込む
+let g:localvimrc_ask = 0
+
 ""VimFilerの設定
 "デフォルトでIDE風のFilerを開く
 "autocmd VimEnter * VimFiler -split -simple -winwidth=30 -no-quit
