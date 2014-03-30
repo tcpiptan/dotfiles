@@ -17,7 +17,8 @@ set number
 set scrolloff=999
 set background=dark
 set list
-set listchars=tab:▸\ ,eol:￬,trail:･
+"set listchars=tab:▸\ ,eol:￬,trail:･
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 set helplang=ja
 set t_Co=256
 set backspace+=indent,eol,start
@@ -67,12 +68,12 @@ autocmd ColorScheme * highlight MatchParen term=reverse cterm=bold ctermfg=81 ct
 autocmd ColorScheme * highlight Pmenu ctermbg=24 ctermfg=NONE
 autocmd ColorScheme * highlight PmenuSel ctermbg=white ctermfg=24
 autocmd ColorScheme * highlight PMenuSbar ctermbg=24 ctermfg=NONE
-autocmd ColorScheme * highlight SpecialKey cterm=reverse ctermfg=DarkMagenta
-autocmd ColorScheme * highlight NonText cterm=NONE ctermfg=DarkMagenta
+autocmd ColorScheme * highlight SpecialKey cterm=NONE ctermfg=236
+autocmd ColorScheme * highlight NonText cterm=NONE ctermfg=236
 autocmd ColorScheme * highlight SignColumn ctermbg=NONE
 
 function! ZenkakuSpace()
-  highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
+  highlight ZenkakuSpace cterm=reverse ctermfg=236 gui=reverse guifg=236
 endfunction
 
 if has('syntax')
